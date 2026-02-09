@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Vaibhavi ❤️</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- YouTube Audio Player (1x1 pixel) -->
+    <div id="yt-player" style="position:fixed; top:0; left:0; pointer-events:none; opacity:1; z-index:0;"></div>
+
+    <!-- Cinematic Intro Sequence -->
+    <div id="cinematic-intro">
+        <div class="intro-text-layer hidden">A Story...</div>
+        <div class="click-hint">Click Anywhere to Begin</div>
+    </div>
+
+    <!-- Main 3D Stage -->
+    <div id="app-stage">
+
+        <!-- UI Overlay -->
+        <div class="ui-layer">
+            <div class="progress-line-container">
+                <div class="progress-line" id="progress-line"></div>
+            </div>
+
+            <!-- Music Control -->
+            <div class="music-toggle" id="music-btn">
+                🔇 Loading Audio...
+            </div>
+
+            <div class="nav-trigger left" onclick="goPrev()">
+                <div class="arrow-icon">‹</div>
+            </div>
+            <div class="nav-trigger right" onclick="goNext()">
+                <div class="arrow-icon">›</div>
+            </div>
+
+            <!-- Language Switcher -->
+            <select id="lang-select" onchange="changeLang(this.value)"
+                style="position:absolute; top:20px; right:20px; padding:5px; background:rgba(0,0,0,0.3); color:white; border:1px solid rgba(255,255,255,0.2); pointer-events:auto; font-family:'Montserrat', sans-serif;">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="mr">Marathi</option>
+            </select>
+        </div>
+
+        <!-- slides container -->
+        <div id="cube-container"></div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
