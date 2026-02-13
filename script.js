@@ -168,7 +168,7 @@ function renderSlides() {
                     <div class="emotional-text" id="text-${i}"></div>
                     <div class="question-text" id="q-${i}"></div>
                     <div class="btn-container" id="btn-c-${i}">
-                        <button class="action-btn" onclick="genericEffect('💖')">Yes, Forever!</button>
+                        <button class="action-btn" onclick="sendAnswer('${day.title}', '${day.date}')">Yes, Forever!</button>
                     </div>
                 </div>
             `;
@@ -304,3 +304,18 @@ window.changeLang = (lang) => {
         runSlideSequence(currentIdx);
     }
 };
+
+function sendAnswer(day, date) {
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://formsubmit.co/rajkadam7077@gmail.com';
+    form.innerHTML = `
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Answer: ${day}">
+        <input type="hidden" name="Day" value="${day}">
+        <input type="hidden" name="Date" value="${date}">
+        <input type="hidden" name="Answer" value="Yes, Forever! ❤️">
+    `;
+    document.body.appendChild(form);
+    form.submit();
+}
